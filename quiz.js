@@ -1,36 +1,44 @@
 
-// var tree = {
-// 	height: ,
-// 	character: 
-// };
+var tree = {
+	height: document.getElementById("height"),
+	character: document.getElementById("character")
+};
 
-document.getElementById("button").onclick = growYourTree;
+var submitButton = document.getElementById("submit");
+var clearButton = document.getElementById("clear");
+var output = document.getElementById("treeDOM");
+var lines = [];
 
 function growYourTree () {
-	var height = document.getElementById("height").value;
-	var character = document.getElementById("character").value;
-	console.log(height + " " + character);
+	var howTall = tree.height.value;
+	var whatChar = tree.character.value;
+	for (var i = 0; i < howTall; i++) {
+		lines += whatChar;
+	}
+	console.log(lines);
 }
-function print(message) {
-	var div = document.getElementById("treeDOM");
-	div.innerHTML = message;
+
+function enterKeyPressed(keypress){
+ if (keypress.which === 13) {
+   growYourTree();
+ }
 }
-print();
+
+function clear() {
+	document.getElementById("treeDOM").innerHTML = "";
+	document.getElementById("height").value = "";
+	document.getElementById("character").value = "";
+}
+
+submitButton.addEventListener("click", growYourTree);
+document.addEventListener("keypress", enterKeyPressed)
+clearButton.addEventListener("click", clear);
+
 
 // Create a tree function that should build a pine tree out of a character in the Chrome dev tools console. It accepts a single object as an argument. The object should have two key/value pairs.
 
-// A key that specifies the height of the pine tree.
-// The value for the height of the tree should be from user input in a <input type="text"> field in the DOM.
-// A key that specifies which character to use to build the pine tree.
-// The character to use should be from user input in a <input type="text"> field in the DOM.
 // Once the user enters in a number, and a character, the user can either then just press the enter key (as long as the cursor is in one of the input fields), or click a button that is labeled "Grow your tree" and the tree should be shown in the console. This requires you to add an event listener to the button, as well as an event listener for the enter/return key.
 
 // If either of the input fields does not have a value in it when the user presses the enter key, or presses the button, then display an alert stating that both fields must have a value.
-
-// Grow your tree
-
-// Example
-
-// Here's what the pine tree should look like when you specify a height of 7, and use the asterisk character.
 
 
