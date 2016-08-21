@@ -16,7 +16,9 @@ function growYourTree () {
 	for (var i = 0; i < howTall; i++) {
 		var math = i*2+1;
 		var width = whatChar.repeat(math);
-		console.log(width);
+		var spaceMath = ((howTall*2-1)-math)/2;
+		var widthSpace = " ".repeat(spaceMath);
+		console.log(widthSpace + width);
 	}
 }
 
