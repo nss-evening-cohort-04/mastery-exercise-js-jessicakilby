@@ -7,15 +7,17 @@ var tree = {
 var submitButton = document.getElementById("submit");
 var clearButton = document.getElementById("clear");
 var output = document.getElementById("treeDOM");
-var lines = [];
+// var lines = [];
 
 function growYourTree () {
 	var howTall = tree.height.value;
 	var whatChar = tree.character.value;
+	// var counter = 1;
 	for (var i = 0; i < howTall; i++) {
-		lines += whatChar;
+		var math = i*2+1;
+		var width = whatChar.repeat(math);
+		console.log(width);
 	}
-	console.log(lines);
 }
 
 function enterKeyPressed(keypress){
